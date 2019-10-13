@@ -72,7 +72,7 @@ def latexToPDF(list_of_questions):
     generated.writelines(base_tex)
     generated.close()
 
-    os.system("pdflatex generated.tex generated.pdf")
+    os.system("pdflatex -interaction=nonstopmode generated.tex generated.pdf")
 
 
 # not really a function, directory will change based on the frontend and backend connections
@@ -81,7 +81,7 @@ directories = [f for f in os.listdir("hw") if not f.__contains__("soln")
                and not f.__contains__("solutions")]
 docs = []
 for d in directories:
-    # docs.append(readTika(basedir + "/hw/" + d))
+    # docs.append(readTika(basedir + "/hw pdfs/" + d))
     docs.append(open(basedir + "/hw/" + d, "r").readlines())
 
 

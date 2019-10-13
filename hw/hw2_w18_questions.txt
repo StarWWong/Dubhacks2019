@@ -1,0 +1,60 @@
+1. Review
+(a) Complex Numbers. Prove each of the following properties below. These will be useful when we start using complex numbers more heavily in Ch.3.
+Hint: For any integer k, e^(j*θ*k) = (e^j*θ)^k
+i. (2 pts) For all integers k, e^(j*2*π*k) = 1
+ii. (2 pts) For the case that k is an even integer, e^(j*π*k) = 1
+iii. (2 pts) For the case that k is an odd integer, e^(j*π*k) = −1
+(b) Integration I. In Chapter 2, you will need to be comfortable multiplying graphs together and then finding the area of the resulting curve. We will start practicing this now to get you ready for this.For each of the signals below, evaluate the integral ∞∫−∞ f(t)g(t)dt
+Show all your work and thought process to receive full credit.
+i. (2 pts) Consider graphs of f(t) and g(t) below:
+Show that the integral evaluates to 12
+ii. (2 pts) Consider graphs of f(t) and g(t) below:
+iii. (2 pts) Consider graphs of f(t) and g(t) below:
+Show that the integral evaluates to 3e^1 − 3e^−3
+iv. (4 pts) Consider graphs of f(t) and g(t) below:
+(c) Integration II. In Chapter 2, you will need to be comfortable performing an integration for an expression consisting of multiple variables. We will start practicing this now to get you ready for this. For each problem below, evaluate the integral and reduce as much as possible. Refer to the HW2 Supplementary Notes for some comments on this topic.
+i. (2 pts) y(t) = t−3∫0(3)(e^t*e^−τ)dτ
+Show that y(t) = 3[e^t − e^3].
+ii. (4 pts) y(t) = t+1∫0(eτ)(e^2t*e^−2τ)dτ
+iii. (2 pts) y(t) = t+1∫t−1(2)(1)dτ
+iv. (4 pts) y(t) = t∫t−2(t− τ)(1)dτ
+v. (4 pts) y(t) = t∫−∞(2)((1/2)(e^−t)*e^τ)dτ
+(d) Integration III. Since some students had trouble with u-substitution in HW1, we will review that again. See the HW2 Supplementary Notes for some comments on this topic.
+i. (2 pts) We will need to use u-substitution in this class for a couple topics including later in Ch.1 when we need to decide whether two integral statements are equivalent. Consider this statement: t+to∫t+to−1 x(τ)dτ = t∫t−1 x(τ+to)dτ
+On a first inspection, they do not look equal because the bounds are not the same. We will
+prove, however, they are using a u-substitution on the right integral so that its integrand x(τ + to) is in the same form as the left integrand x(τ). Rewrite the integral on the right using u-substitution so that it is in the form u1∫u0 x(u)du. Show that after u-substitution you get the right integral in the same form as the left but with a different variable of integration.
+ii. (4 pts) Let us apply what you learned in the last part to another problem. Consider the following two integrals:
+y1(t) = 2t−2to−1∫−∞ x(τ)dτ
+y2(t) = 2t∫−∞ x(τ − to)dτ
+Is y1(t) = y2(t)? Full work is needed to receive full credit.
+
+
+
+2. Operations on Signals
+Two continuous-time signals, x(t) and y(t), are shown in Figure 1. Sketch (labeling all key points) the signals
+(a) (2 pts) x(−2t + 1)
+(b) (2 pts) y(4t)
+(c) (2 pts) x(−2t + 1) + y(4t)
+Figure 1: Problem 2: Signal transformations
+
+
+
+3. Signal Properties - Periodicity Are the following signals periodic? Justify your response and if periodic,
+derive the period.
+(a) (2 pts) x(t) = sin(6t) + cos^2(t)
+(b) (2 pts) x(t) = sin(6t) + cos^2(2πt)
+(c) (2 pts) x(t) = sin(6πt) + cos^2(2πt)
+(d) (4 pts) x(t) = e^5*t sin(6t)
+(e) (4 pts) x(t) = e^j*5*t sin(6t)
+
+
+
+4. Signal Properties - Even/Odd Signals
+(a) (2 pts) x(t) = u(t + 3) − u(t − 3). Is x(t) an even signal or an odd signal?
+Show / explain why x(t) is an even signal.
+(b) (4 pts) Let x(t) = e^−j*π*t − 5t*cos(3πt). Is x(t) even, odd, or neither? Justify your answer.
+(c) (2 pts) Consider x(t) in Problem 4-Part (b) (i.e., x(t) = e^−j*π*t − 5t*cos(3πt).). Find even and odd parts, xe(t) and xo(t). Show that xe(t) = cos(πt) and xo(t) = −j*sin(πt) − 5t cos(3πt).
+(d) (4 pts) x(t) is depicted in the figure below. Sketch the odd xo(t) and the even xe(t) parts of x(t).
+
+
+
