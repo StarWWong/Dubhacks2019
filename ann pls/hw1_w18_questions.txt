@@ -1,0 +1,103 @@
+1. Complex Numbers - Magnitude and Phase Components, Real and Imaginary Parts.
+(a) (5 pts) Identify the magnitude component |z| and the phase component ∠z for the following complex
+numbers:
+i. z = 4e−j .
+ii. z = ej
+π
+6 .
+(b) (5 pts) Identify the real part Re{z} and the imaginary part Im{z} for the following complex numbers:
+i. z = 2− j3.
+ii. z = j2.
+iii. z = 3.
+
+
+
+2. Complex Numbers - Polar Form and Rectangular Form.
+(a) (5 pts) Using the unit circle or formulas for r and θ, convert the following complex numbers in to polar
+form, z = rejθ. Make sure r > 0 and −π < θ ≤ π:
+i. z =
+√
+3
+2 + j
+1
+2 .
+ii. z = −2
+(b) (5 pts) Using the complex plane or Euler’s formula, convert the following complex numbers in to rectan-
+gular form, z = x+ jy:
+i. z = 3e−jπ
+ii. z = 2ej
+π
+2
+
+
+
+3. Complex Conjugation
+(a) Using the method of complex conjugation for dividing complex numbers, simplify the expression for each
+of the following complex numbers so that your answer is in rectangular form, z = x+ y:
+i. (2 pts) z = 11−j2 . Show that z =
+1
+5 + j
+2
+5 .
+ii. (5 pts) z = − 1+j21−j2 .
+(b) Using the method of complex conjugation for finding magnitude, find the magnitude squared component
+|z|2 for:
+i. (2 pts) z = 1 + j3.
+Show that |z|2 = 10.
+ii. (2 pts) z = 2ej3.
+Show that |z|2 = 4.
+
+
+
+4. Function Evaluation.
+(a) (5 pts) Let y(t) = tx(t+ 3)
+i. What is the expression for y(t− 3)?
+ii. What is the expression for y(2t)?
+(b) (5 pts) Let y(t) =
+∞∫
+−∞
+x(τ)h(t− τ)dτ
+i. What is the expression for y(3)?
+1
+ii. What is the expression for y(−t)?
+
+
+
+5. Integration.
+(a) (2 pts) Evaluate the following integral:
+∫∞
+3
+e−6tdt +
+∫ 0
+−∞ e
+6tdt.
+Show that the answer is 16 (e
+−18 + 1).
+(b) (2 pts) Evaluate the integral
+∫ 5
+t−2 dτ .
+Note: τ is the variable of integration and t can be treated as a constant.
+Show that the answer is −t+ 7.
+(c) (2 pts) Suppose
+∫∞
+−∞ x(t)dt = 3. Using this known integral and u-substitution, evaluate
+∫∞
+−∞ x(2t)dt.
+Show that the answer is 32 .
+(d) (5 pts) Suppose
+∫ x
+−∞ x(t)dt = 2, where x(t) is a function of t, t is the variable of integration, and x can
+be treated as a constant. Using u-substitution, evaluate
+∫ x−1
+−∞ 2x(t+ 1)dt.
+(e) (2 pts) Consider
+∫ t+2
+−∞ x(τ − to)dτ , where τ is the variable of integration and t and to can be treated as
+constants. Using u-substitution, we can rewrite this integral as
+∫ a
+−∞ x(u)du. What is a in terms of t and
+to?
+Show that a = t+ 2− to.
+
+
+

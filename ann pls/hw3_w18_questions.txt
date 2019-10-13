@@ -1,0 +1,194 @@
+1. Review
+(a) Complex Numbers. (2 pts) In Ch.3, you will need to be comfortable working with equations with
+complex numbers and terms. Here is one problem for you to practice your skills. Consider the
+following equation where s is complex:
+H(s) = 3e2s
+Using H(s) above, evaluate and simplify as much as possible the following equation y(t) =
+1
+2H(j5)e
+j5t + 12H(−j5)e
+−j5t. Hint: Use Euler’s formulas.
+(b) Integration We will use this problem to continue practice doing multivariable integration. In
+Ch.2, you will need to evaluate a so-called running integral where the upper bound is a variable
+as shown below:
+s(t) =
+∫ t
+−∞
+h(τ)dτ
+Because t is a variable and changing values, the answer for s(t) will also be a function of t – that
+is, for different regions of t, you will get a different equation for s(t). See Supplementary Notes
+for an example. Evaluate the integral above for the following cases:
+i. (2 pts) h(τ) =
+{
+
+
+
+3, τ > −1
+
+
+
+0, τ < −1
+Show that s(t) =
+{
+
+
+
+0, t < −1
+3(t+ 1), t > −1
+ii. (4 pts) h(τ) =
+{
+
+
+
+0, τ > 0
+e2τ , τ < 0
+(c) Periodicity and Even/Odd. (4 pts)
+Let z(t) = sin3(4t) + e−j6t. Find the odd z0(t) part of z(t). Is the odd part of z(t) periodic?
+
+
+
+2. Energy and Power
+(a) (2 pts) x(t) = e−atu(−t), a > 0. Evaluate E∞ and P∞. Is x(t) an energy signal or a power signal?
+Show that x(t) is not an energy signal and not a power signal.
+1
+(b) (2 pts) Find the energy E∞ and power P∞ of the signal x(t) = cos
+2(2t). Is this an energy signal
+or a power signal? Show that x(t) has infinite energy but finite power with P∞ =
+3
+8 , so hence it
+is a power signal .
+Hint: The power of a periodic signal can be calculated from the power in one period.
+(c) (4 pts) Find the energy E∞ and power P∞ of the signal x(t) is defined as below. Is this an energy
+signal or a power signal?
+x(t) =
+ t+ 1 −1 < t < 0−t+ 1 0 ≤ t < 1
+0 otherwise
+
+
+
+3. Unit Step and Unit Impulse
+(a) Graph the following sum of unit step functions. See HW3 Supplementary Notes for extra assis-
+tance, if needed.
+i. (2 pts) f(t) = u(t)− u(t− 3)
+ii. (2 pts) f(t) = u(t+ 2)− u(t− 2) + 3u(t− 3)− 3u(t− 4)
+(b) Consider the following signal:
+f(t) = −u(t− 3)− 3u(t− 1) + 2u(t+ 2) + 2u(t− 2)
+i. (2 pts) Graph f(t)
+ii. (2 pts) Graph f(3− t)
+(c) Given the following piecewise function, rewrite each function in terms of the unit step function.
+See HW3 Supplementary Notes for extra assistance, if needed.
+i. (2 pts) f(t) =
+{
+
+
+
+3, 2 < t < 4
+
+
+
+0, otherwise
+ii. (2 pts) f(t) =
+
+−2, −3 < t < −1
+
+
+
+4, 5 < t < 7
+
+
+
+0, otherwise
+(d) (2 pts) Show that the following statement is true.
+∫ 0
+−∞[2δ(t+ 3) + 3δ(t− 1)]dt = 2
+(e) (4 pts) Consider x(t) below:
+Simplify the following: x(t)x(−t)[δ(t− 0.5) + δ(t+ 1.5)].
+(f) (2 pts) Evaluate
+∫∞
+−∞ τ
+2δ(τ + 1)dτ . Show that the answer is 1.
+
+
+
+4. Causal.
+Consider the following input-output relationships of a system:
+2
+(a) (2 pts) y(t) = x(t− 3)− x(3− t). Is the system causal? Show that the system is not causal.
+(b) (4 pts) y(t) = x(t/4). Is the system causal?
+(c) (2 pts) y(t) =
+dx(t)
+dt
+. Is the system causal? Show that the system is causal.
+(d) (4 pts) y(t) = cos(2t)x(t− 7) + sin(t)x(t− 1). Is the system causal?
+(e) (4 pts) The input-output relationship is given as:
+y(t) = x(t+ 3a− 2b+ 4). Given input-output relationship, determine the values of b in terms of
+a that will make the system causal.
+
+
+
+5. Stable.
+Consider the following input-output relationships of a system:
+(a) (2 pts) y(t) = x(t)(x(t− k)) where k is a real number. Is the system stable?
+Show that the system is stable by showing that it has a constant upper bound.
+(b) (2 pts) y(t) =
+∫ 2t
+t
+x(τ)dτ . Is the system stable?
+Show that the system is not stable by showing that it has no constant upper bound.
+(c) (4 pts) y(t) =
+∫ 300
+10
+x(τ)dτ . Is the system stable?
+(d) (4 pts) y(t) =
+d
+dt
+(x(t)− t2). Is the system stable? Hint: find the counter-example.
+
+
+
+6. Invertible.
+Given the following input-output relationships of different systems find out if the system is invertible
+or not; if so, derive the inverse. Justify your answer in both cases.
+(a) (2 pts) y(t) = x(t/3). Is this system invertible?
+Show that it is.
+(b) (2 pts) y(t) =
+{
+x3(t) if t > 2
+0 otherwise
+. Is this system invertible?
+Show that it is NOT invertible.
+(c) (4 pts) y(t) = tx(t). Is this system invertible?
+(d) (4 pts) y(t) =
+(
+x(t)
+)k
+, where k is an integer. Is the system invertible?
+Hint : Think of two cases, one when k is odd, second when k is even. It might help to draw a
+picture of
+(
+x(t)
+)k
+for a couple of small values of k to guess what the answer might be; once you
+guess it, you can prove invertibility or non-invertibility for each of the two cases.
+(e) (2 pts) y(t) =
+{
+x(t− 7) if t > 1
+8x(t) t ≤ 1 . Is this system invertible or not?
+Show that it is invertible.
+
+
+
+7. Time-Invariance.
+Given input-output relationship of a system, prove whether system is time-invariant.
+(a) (2 pts) Consider the system y(t) = x(5t) + sin(x(t)). Is this system time-invariant?
+(b) Consider a system T with input x(t) and output y(t) related by:
+y(t) = x(t){g(t) + g(t− 1)}
+3
+i. (2 pts) If g(t) = 1 for all t, show that T is time-invariant using the time-invariance test from
+lecture.
+ii. (2 pts) If g(t) = t, show that T is not time-invariant by using the time-invariance test from
+lecture.
+(c) (2 pts) Consider the system T where y(t) = T (x(t)) = x(sin(t)). Is this time-invariant?
+
+
+

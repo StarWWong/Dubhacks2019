@@ -1,0 +1,53 @@
+1. Review (15 pts)
+(a) (5 pts) LTI Systems.
+Consider two LTI subsystems that are connected in cascade, where system T1 has step response
+s1(t) = u(t− 2)−u(t− 6) and system T2 has impulse response h2(t) = e−4tu(t). Find the overall
+impulse response h(t).
+(b) (5 pts) Fourier Series.
+The input signal x(t) and the impulse response h(t) of the system is given as follows:
+x(t) = sin(2t)cos(t)− ej3t + 2 and h(t) = sin(2t)t
+Using Fourier Series, find the output y(t).
+(c) (5 pts) Parseval’s Theorem.
+Let’s consider the system in Problem 1-(b). Using Parseval’s Theorem, compute the power P∞
+of the output y(t) and the energy E∞ of the impulse response h(t).
+
+
+
+2. Fourier Transform: Frequency Response (15 pts)
+(a) (5 pts) Let’s consider the LTI system with the impulse response h(t) = 5e−3tu(t). And the input
+to this LTI system is x(t) = e−2tu(t). Find Y (jw) and then take the inverse transform to find y(t).
+(b) (5 pts) The impulse response and the output are given as follows:
+H(jw) = 15+jw and y(t) = e
+−4tu(t)− e−5tu(t).
+Find input x(t).
+(c) (5 pts) Let’s consider the LTI system with the impulse response h(t) = 4π sinc(2(t− 1)).
+i. Find the frequency response H(jw).
+ii. Find the output y(t) when input is x(t) = sin(t).
+
+
+
+3. Fourier Transform: LTI Systems Described by LCCDE. (32 pts)
+(a) Consider the causal LTI system represented by its input-output relationship:
+d^2y(t)/dt2 + 4 dy(t)/dt + 3y(t) = −x(t).
+i. (4 pts) Find the frequency response H(jw).
+ii. (4 pts) Find the impulse response h(t).
+iii. (4 pts) Find the output y(t) when x(t) = e−2tu(t).
+(b) A causal LTI system is described by the following differential equation:
+dy(t)/dt+ 4y(t) = 9x(t).
+i. (4 pts) Find the frequency response H(jω) of this system.
+ii. (4 pts) Find the magnitude of the frequency response, |H(jω)|.
+iii. (4 pts) Sketch the magnitude of the frequency response (for both positive and negative ω).
+iv. (4 pts) Classify this system as low-pass/high-pass/band-pass/band-stop.
+v. (4 pts) Find the impulse response h(t) of this system.
+
+
+
+4. Fourier Transforms: LTI Filters. (12 pts)
+An LTI system is described by the following equation: y(t) = x(t)−x(t)∗h1(t), where h1(t) is an ideal
+BPF with gain A = 1 and cutoff frequencies wl = 5 and wu = 6.
+(a) (4 pts) What is the overall frequency response H(jw) in terms of H1(jw)?
+(b) (4 pts) Sketch |H(jw)|.
+(c) (4 pts) Classify filter type of this system. Show, or explain why, this is a bandstop filter (BSF).
+
+
+

@@ -1,6 +1,5 @@
 # Read in PDF as raw text, parse for individual questions
 import re, os, random
-from pdflatex import PDFLaTeX
 from tika import parser
 
 
@@ -16,7 +15,9 @@ def extractQuestionsFromSingleDoc(doc_text):
     encounteredQuestion = False
     questions = []
     questionToAdd = []
-    for line in doc_text.splitlines():
+    print(doc_text)
+    # for line in doc_text.splitlines():
+    for line in doc_text:
         # need to mark beginning of questions and end of questions
         if re.match(r"[0-9]+. ", line):
 
@@ -36,7 +37,7 @@ def extractQuestionsFromSingleDoc(doc_text):
     return questions
 
 
-def extractAllQuestions():
+def extractAllQuestions(documents):
     allQuestions = []
 
     for doc in documents:
@@ -53,40 +54,41 @@ def latexToPDF(list_of_questions):
     # 5) profit?
 
     # 1) select 10 random questions
+
     test_questions = ""
     for i in range(10):
         assignment = random.choice(list_of_questions)
-        selectedQ = random.choice(assignment)[0]
-        test_questions += selectedQ + "\n"
+        selectedQ = random.choice(assignment)
+        for line in selectedQ:
+            test_questions += line + "\n"
+        test_questions += "\n\n\n\n\n"
         # remove randomly chosen problem from the pool
         # assignment.remove([selectedQ])
 
     # 2) write questions to line 37, index 36
     base_tex = [line for line in open("base_test.tex", "r")]
     base_tex[36] = test_questions
-
     generated = open("generated.tex", "w")
     generated.writelines(base_tex)
+    generated.close()
 
-    pdfl = PDFLaTeX.from_texfile("generated.tex")
-    pdf, log, completed_process = pdfl.create_pdf(keep_pdf_file=True, keep_log_file=True)
+    os.system("pdflatex generated.tex generated.pdf")
 
 
 # not really a function, directory will change based on the frontend and backend connections
 basedir = os.getcwd()
-directories = [f for f in os.listdir("hw test") if not f.__contains__("soln")
+directories = [f for f in os.listdir("hw") if not f.__contains__("soln")
                and not f.__contains__("solutions")]
-documents = []
+docs = []
 for d in directories:
-    documents.append(readTika(basedir + "/hw test/" + d))
+    # docs.append(readTika(basedir + "/hw/" + d))
+    docs.append(open(basedir + "/hw/" + d, "r").readlines())
 
 
-# testQ = extractAllQuestions()[8]
-# for q in testQ:
-#     for k in q: print(k + "\n")
+latexToPDF(extractAllQuestions(docs))
 
-latexToPDF(extractAllQuestions())
-# for l in testQ: print(l)
+
+
 
 
 

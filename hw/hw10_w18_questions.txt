@@ -1,0 +1,63 @@
+1. Laplace Transform. (10 pts)
+Find the Laplace Transform of the following signals and sketch the corresponding pole-zero plot for
+each signal. In the plot, indicate the regions of convergence (ROC). Write X(s) as a single fraction in
+the form of N(s)D(s) .
+(a) (2 pts) x(t) = e^−4tu(t) + e^−6tu(t). Show that X(s) = 2s+10(s+4)(s+6) . with ROC of Re{s} > −4.
+(b) (4 pts) x(t) = e^4tu(−t) + e8tu(−t).
+(c) (4 pts) x(t) = δ(t)− u(−t).
+
+
+
+2. Inverse Laplace Transform. (14 pts)
+Find x(t) for given X(s) and ROC. Plot pole-zero plots.
+(a) (2 pts) X(s) = 1s2+5s+6 , ROC: Re{s} > −2. Show that x(t) is x(t) = e
+−2tu(t)− e−3tu(t).
+(b) (4 pts) X(s) = s−3s^2+5s+6 , ROC: −3 < Re{s} < −2.
+(c) (4 pts) X(s) = s+2s^2+4s+20 , ROC: Re{s} < −2.
+(d) (4 pts) X(s) = ss^2+9 , ROC: Re{s} < 0.
+
+
+
+3. ROC and Signal Properties. (10 pts)
+(a) (5 pts) Suppose x(t) is a real signal with rational Laplace transform X(s) with the following
+properties:
+i. X(s) has two poles and one zero, with one pole at s = −1− 2j,
+ii. the Fourier transform of e2tx(t) does not exist,
+iii. ∫∞ −∞ x(t)dt = −2,
+iv. ∫∞ −∞ e^(-tx(t))dt = 0.
+Find x(t) (the time-domain signal).
+(b) (5 pts) Signal x(t) has the following properties:
+i. X(s) is rational with 1 zero and 2 poles
+ii. x(t) is real
+iii. X(s) has its zero at s = 1 and a known pole at s = 1 - 2j
+iv. Area under x(t) is equal to 1
+v. e^−3tx(t) is absolutely integrable (so Fourier Transform of e^−3tx(t) does exist)
+Deduce the expression for signal x(t).
+
+
+
+4. ROC and LTI Systems. (16 pts)
+(a) (5 pts) Consider another system described by: −2y(t)− dy(t)/dt + d2y(t)/dt = 3x(t) + dx(t)/dt.
+i. (1 pt) Specify the ROC corresponding to H(s) if it is known the system is causal. Also, sketch
+the pole-zero plot and associated ROC.
+ii. (2 pts) Specify the ROC corresponding to H(s) if it is known the system is stable. Also,
+sketch the pole-zero plot and associated ROC.
+iii. (2 pts) Specify the ROC corresponding to H(s) if it is known the system is left-sided. Also,
+sketch the pole-zero plot and associated ROC.
+(b) (5 pts) Let H(s) represent the system function for a causal, stable LTI system. The input to the
+system consists of the sum of three terms, one of which is an impulse δ(t) and the second term is
+a complex exponential es0t, where s0 is a complex constant. The output of the system is:y(t) = e^−tu(t) + 10 3/4e^4t cos(3t) + 6 3/4 e^4t sin(3t).
+Determine h(t) and s0 consistent with this information.
+Hint1: What happens when a complex exponential is passed through an LTI system?
+Hint2: One thing to note is that the output is real even if s0 was complex. This indicates that
+the third term consists of es∗0t, where s∗0 is the complex conjugate of s0.
+(c) For each of the cases below, draw a pole-zero plot and ROC for a system that matches the
+description:
+i. (2 pts) The system is stable; the impulse response is two-sided; and the system frequency
+response approaches a non-zero constant at high frequencies.
+ii. (2 pts) The system is not stable and contains complex poles in the left half plane.
+iii. (2 pts) The impulse-response is two-sided and absolutely integrable, and the system behaves
+like a lowpass filter.
+
+
+

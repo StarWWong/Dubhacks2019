@@ -1,0 +1,127 @@
+1. Review (16 pts)
+(a) Partial Fraction Expansion. (2 pts)
+X(s) = −5/(s^2+2s+2). Using the cover-up method, show that X(s) = (−5/2*j)/(s+1+j) + (5/2*j)/(s+1−j).
+(b) Partial Fraction Expansion. (4 pts)
+X(s) = (s+2)/(s(s+1)2(s+5)). Using the cover-up method.
+(c) Magnitude and Phase Equation. (2 pts)
+Let X = 1α−jω , where α > 0. Evaluate the magnitude and phase of X. Show that |X| =1√α^2+ω^2and ∠X = tan^−1(ω/α).
+(d) Signal Properties. (4 pts)
+x(t) = cos(t+ π3). Evaluate P∞. Is x(t) a power signal?
+Show that the power of the signal is P∞ = 1/2 , thus making x(t) a power signal.
+Hint: If x(t) is periodic with fundamental period To, the power of x(t), P∞ is equivalent to the
+average power of x(t) over any interval of length To: P = 1/To ∫ To 0 |x(t)|^2 dt.
+(e) Convolution. (4 pts)
+Let T denote an LTI system with impulse response p(t + 1) − 2p(t − 1), then find and sketch
+y(t) = T [p(−t/2)].
+Hint: The pulse signal p(t) = u(t)− u(t− 1).
+
+
+
+2. LTI System Description (14 pts)
+Consider the following three LTI systems:
+• T1: Has impulse response h1(t) =
+{2, −1 < t < 1
+ 0, otherwise
+• T2: Has step response s2(t) = 2u(t− 1)
+• T3: Has input-output relationship y3(t) = x3(t+ 2)
+(a) (4 pts) What is the step response s1(t) of system T1?
+(b) (4 pts) What is impulse response h2(t) of system T2?
+(c) (2 pts) What is the corresponding input-output relationship for system T2? Show that y2(t) =
+2x2(t− 1).
+(d) (4 pts) What is the impulse response h3(t) of system T3? What is the corresponding step response
+s3(t)?
+
+
+
+3. LTI System Interconnection and Properties (14 pts)
+Consider the same LTI systems in Problem 2. Answer the following questions.
+(a) (2 pts) Is system T2 BIBO stable? Using the impulse response test that we discussed in lecture,
+show that T2 is BIBO stable with ∫∞ −∞ |h(t)|dt = 2.
+(b) (4 pts) Suppose T1 and T3 are connected in parallel. Is the overall system causal? Use the impulse response test that we discussed in lecture.
+(c) (4 pts) Suppose T2 and T3 are connected in parallel. Find the overall impulse response h(t) and
+then find the overall output y(t) when the input is x(t) = sin(t^2).
+(d) (4 pts) Suppose T1 and T3 are connected in series. Is the system causal? Is the system BIBO
+stable? Use the impulse response tests.
+
+
+
+4. Fourier Series: Synthesis. (4 pts)
+(a) (2 pts) wo = π/4 and a0 = −2, a1 = a−1 = 1, a2 = a ∗ −2 = 1/j , a3 = 2, and a−3 = −2.
+Using the synthesis equation, convert back to the time domain and show that:
+x(t) = −2[1− cos(π/4 t)− sin(π/2 t)− 2jsin(3π/4 t)]
+(b) (2 pts) wo = π/4 and a1 = 1/2j^ej π/4 , a−1 = −1/2j e^(−j)π/4 .
+Using the synthesis equation, convert back to the time domain and show that:
+x(t) = sin(π/4t+π/4)
+
+
+
+5. (Fourier Series: Analysis) (20 pts) In the following problems, we practice analyzing signals and computing their Fourier Series coefficients:
+(a) Consider the continuous-time signal x(t) = 2cos(3t)sin(t)− je^(−j8t) + e^(j6(t−3)).
+i. (4 pts) Show the Fourier Series representation of x(t) by finding the fundamental frequency
+ω0 and its Fourier Series coefficients ak.
+Hint: cos(A)sin(B) = 1/2 [sin(A+B)− sin(A−B)]
+ii. (2 pts) Using the result of the previous part, find the power of x(t) using Parseval’s Theorem.
+(b) Consider a signal x(t) = sin(3πt) + cos(2πt). Answer the following questions about x(t).
+i. (1 pt) What the fundamental frequency ω0 of this signal?
+ii. (1 pt)Express x(t) as a sum of complex exponentials using Euler’s formula.
+iii. (2 pts) What are the coefficients ak in the Fourier Series representation of x(t)?
+iv. (1 pt) The DC component of a signal is defined as its mean value. What is the DC component
+of this signal?
+(c) Consider the periodic signal described by x(t) = ∞∑ k=−∞ δ(t− 2k)− 14 ∞∑ k=−∞ δ(t+ 2k − 1). 
+Answer the following questions about this signal.
+i. (1 pt) Find the fundamental frequency, ω0.
+ii. (4 pts) Find the DC value c0, and the Fourier series coefficients ck for k 6= 0. Specify the
+value of ck for even k and odd k.
+(d) (4 pts) Consider a periodic signal of the form 
+x(t) = { 1 if 0 ≤ t < 4
+−1 4 ≤ t < 8 , with period T = 8.
+Compute the Fourier series coefficients of this signal using analysis formulas.
+
+
+
+6. Fourier Series: Properties (6 pts)
+2
+(a) Let x(t) be a continuous-time periodic signal with fundamental frequency ω and Fourier coefficients
+ak. Express the Fourier series coefficients of the following signals (call them bk) in terms of ak.
+Justify all your statements. Use the properties from Table 3.1 in the textbook.
+i. (2 pts) y(t) = x(2− t) + x(t− 1).
+ii. (2 pts) y(t) = Even(x(t)).
+iii. (2 pts) y(t) = x(3t− 1).
+
+
+
+7. Fourier Series: Parseval’s Relation and LTI (30 pts)
+(a) (2 pts) Suppose a signal x(t) has Fourier Series representation ωo = 2, a5 = a−5 = − 1/3 , a3 = a−3 = 1/3 , a2 = a∗−2 = j/π . Compute the average power of the signal x(t).
+Show that P = 4/9 + 2/π2
+(b) (4 pts) Suppose a signal x(t) has Fourier Series representation ωo = 2 and ak = {1/2jk, |k| < 3
+0, otherwise
+Compute the average power of the signal x(t).
+(c) (4 pts) Suppose a signal with Fourier Series representation ωo = 2, a5 = a−5 = − 1/3 , a3 = a−3 =
+13 , a2 = a∗−2 = j/π is input to an LTI system with frequency response
+H(ω) =
+ω, 0 < ω < 8
+−ω, −8 < ω < 0
+0, otherwise
+Find the output Fourier Series coefficients bk and the corresponding output signal y(t)
+Show that the final output you get is y(t) = 4 cos(6t)− 8π sin(4t)
+(d) (4 pts) Suppose a signal with Fourier Series representation ωo = 2 and ak = {1/2jk, |k| < 3
+0, otherwise
+is input to an LTI system with frequency response
+H(ω) = {2, 10 < |ω| < 14
+0, otherwise
+Find the output Fourier Series coefficients bk and the corresponding output signal y(t)
+(e) Fourier Series.
+Consider the following LTI system:
+Suppose the input to the system is given by: x(t) = 2cos(4t) + j^ej2t.
+Also, suppose the LTI system has the frequency response H(jw) =
+{2 −2 < w < 10
+0 otherwise.
+i. (4 pts) Transform the input signal x(t) into its Fourier Series representation by finding the
+fundamental frequency wo and the Fourier Series coefficients ak.
+ii. (4 pts) Find the output Fourier Series coefficients bk.
+iii. (4 pts) Using your results from (b), find the output signal y(t).
+iv. (4 pts) What is the average power of the input, which we can denote as Pin? What is the
+average power of the output, which we can denote as Pout?
+
+
+

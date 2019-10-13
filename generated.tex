@@ -1,0 +1,337 @@
+\documentclass[11pt,addpoints]{exam}
+\usepackage{amsfonts,amssymb,amsmath, amsthm}
+\usepackage{graphicx}
+\usepackage{systeme}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepgfplotslibrary{fillbetween}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+
+
+\pagestyle{headandfoot}
+
+\firstpageheader{Sample Exam (\numpoints\ points)\\ September 26, 2019}{}{Name: \underline{\hspace{2.5in}}}
+%\firstpageheadrule
+
+\runningheader{Sample Exam}{}{Page \thepage\ of \numpages}
+\runningheadrule
+
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+
+
+\begin{document}
+
+\begin{center}
+\fbox{\fbox{\parbox{6in}{\centering
+No notes, calculators, or other aids are allowed.  Read all directions carefully and write your answers in the space provided.  To receive full credit, you must show all of your work.
+}}}
+\end{center}
+
+
+
+
+\begin{verbatim}
+4. Impulse Train Sampling System. (34 pts) The purpose of this problem is to get you comfortable walk-
+
+ing through a block diagram consisting of an impulse train sampling system and to visually understand
+
+the concept of aliasing.
+
+(a) x(t) undergoes impulse train sampling through the following system below:
+
+Answer the following questions:
+
+i. (2 pts) What is the sampling frequency ωs used by this system? What is the equation for the
+
+output Fourier Transform Xs(jω) in terms of X(jω)?
+
+Show that ωs = 10 and Xs(jω) = 5π ∞ ∑ k=−∞ X(j(ω − 10k))
+
+ii. (4 pts) Using your equation from (i), sketch the output spectrum Xs(jω) vs. ω. Make sure
+
+to label all critical points.
+
+iii. (2 pts) Using your sketch from (ii) and your understanding of the concept of aliasing, explain
+
+why this is an example of sampling with no aliasing.
+
+(b) Now consider the following system diagram with a different impulse train and input x(t):
+
+Answer the following questions:
+
+i. (4 pts) What is the sampling frequency fs (not ωs!) used by this system? What is the
+
+equation for the output Fourier Transform Xs(jω) in terms of X(jω)?
+
+ii. (4 pts) Using your equation from (i), sketch the output spectrum Xs(jω) vs. ω. Make sure
+
+to label all critical points.
+
+Note: you need to first find and sketch X(jω).
+
+iii. (2 pts) Using your sketch from (ii), does aliasing of x(t) occur? Justify your answer.
+
+(c) Now consider the following system consisting of both modulation and impulse train sampling
+
+systems:
+
+i. (4 pts) What is the sampling period Ts used by the impulse train sampling system? What
+
+is the equation for X1(jω) in terms of X(jω)? What is the equation for Y (jω) in terms of
+
+X1(jω)?
+
+ii. (4 pts) Sketch the final output spectrum Y (jω) vs. ω. Make sure to label all critical points.
+
+iii. (4 pts) Using your sketch, is it possible to recover the original input x(t) from y(t)? If so,
+
+draw or describe a system diagram that will do this. Make sure to clearly specify all system
+
+blocks being used either in words or with a graph.
+
+(d) (4 pts) Using your knowledge of the behavior of impulse train sampling systems, draw the ap-
+
+propriate system diagram that will produce the following input-output pair. Justify your design
+
+choices.
+
+Make sure to clearly specify your systems with an equation, description, or graph.
+
+
+
+
+
+
+4. Fourier Transform: Periodic Signals (8 pts)
+
+(a) (4 pts) Find the Fourier Transform of x(t) = e^jπt + sin(2πt) without using the table of pairs
+
+(applying the formula of Fourier Transform in Continuous Time).
+
+(b) (4 pts) Find the Fourier Transform of x(t) = ∞∑ k=−∞ δ(t− 2k).
+
+Hint: Find the Fourier series coefficients ak of the signal first, and then apply the formula
+
+X(jw) = ∞∑ k=−∞ 2πakδ(w − kwo).
+
+
+
+
+
+
+2. Inverse Laplace Transform. (14 pts)
+
+Find x(t) for given X(s) and ROC. Plot pole-zero plots.
+
+(a) (2 pts) X(s) = 1s2+5s+6 , ROC: Re{s} > −2. Show that x(t) is x(t) = e
+
+−2tu(t)− e−3tu(t).
+
+(b) (4 pts) X(s) = s−3s^2+5s+6 , ROC: −3 < Re{s} < −2.
+
+(c) (4 pts) X(s) = s+2s^2+4s+20 , ROC: Re{s} < −2.
+
+(d) (4 pts) X(s) = ss^2+9 , ROC: Re{s} < 0.
+
+
+
+
+
+
+0, otherwise
+
+Compute the average power of the signal x(t).
+
+(c) (4 pts) Suppose a signal with Fourier Series representation ωo = 2, a5 = a−5 = − 1/3 , a3 = a−3 =
+
+
+
+
+
+
+1. Laplace Transform. (10 pts)
+
+Find the Laplace Transform of the following signals and sketch the corresponding pole-zero plot for
+
+each signal. In the plot, indicate the regions of convergence (ROC). Write X(s) as a single fraction in
+
+the form of N(s)D(s) .
+
+(a) (2 pts) x(t) = e^−4tu(t) + e^−6tu(t). Show that X(s) = 2s+10(s+4)(s+6) . with ROC of Re{s} > −4.
+
+(b) (4 pts) x(t) = e^4tu(−t) + e8tu(−t).
+
+(c) (4 pts) x(t) = δ(t)− u(−t).
+
+
+
+
+
+
+1, −2 < w < 0
+
+−1, 0 6 w < 2
+
+
+
+
+
+
+4. Fourier Transform: Periodic Signals (8 pts)
+
+(a) (4 pts) Find the Fourier Transform of x(t) = e^jπt + sin(2πt) without using the table of pairs
+
+(applying the formula of Fourier Transform in Continuous Time).
+
+(b) (4 pts) Find the Fourier Transform of x(t) = ∞∑ k=−∞ δ(t− 2k).
+
+Hint: Find the Fourier series coefficients ak of the signal first, and then apply the formula
+
+X(jw) = ∞∑ k=−∞ 2πakδ(w − kwo).
+
+
+
+
+
+
+3. Demodulation. (26 pts) The purpose of this problem is to apply what you have learned about mod-
+
+ulation by cosine to design a demodulation system to recover an input or obtain some other desired
+
+result.
+
+(a) Consider the following block diagram:
+
+i. (4 pts) Sketch the output spectrum Y (jω). Precisely label all points and axes.
+
+ii. X(jω) can be recovered from Y (jω) using a single modulator followed by an ideal LPF with
+
+frequency response Hr(jω). Answer the following questions:
+
+A. (4 pts) Draw the block diagram for this system. Clearly specify the modulation signal,
+
+as well as the filter gain A and cutoff frequency wc for the ideal LPF.
+
+B. (2 pts) Note that several cutoff frequencies wc are valid for (A). What range of cutoff
+
+frequencies wc can be used to fully recover x(t) from y(t)?
+
+(b) (4 pts) Suppose the output of a modulation system is given by Y (jω) below. Draw the demodu-
+
+lation system that will recover the desired input again, shown below as Xr(jω):
+
+(c) We briefly learned in class that modulation is useful for different radio stations to send radio
+
+signals out simultaneously. This is a process called frequency division multiplexing, which we will
+
+practice with below.
+
+i. (4 pts) Consider the following frequency division multiplexing system that can be used to
+
+transmit multiple signals at the same time:
+
+Draw the overall output Fourier Transform Y (jω) produced by this system.
+
+ii. (4 pts) Suppose a receiver picks up a signal r(t) whose Fourier Transform is given below:
+
+We can get back the received triangle signal x1(t) using the system below. The idea is to first
+
+filter out the desired signal and then shift it back to the center around frequency ω = 0:
+
+Sketch the output Fourier Transform Xr1(jω) of this system.
+
+iii. (4 pts) You will notice the system has an error in the output amplitude. What change can
+
+be made to the receiver system to get the desired amplitude back up to 1? Note: there are
+
+several answers to this question.
+
+
+
+
+
+
+5. (Fourier Series: Analysis) (20 pts) In the following problems, we practice analyzing signals and computing their Fourier Series coefficients:
+
+(a) Consider the continuous-time signal x(t) = 2cos(3t)sin(t)− je^(−j8t) + e^(j6(t−3)).
+
+i. (4 pts) Show the Fourier Series representation of x(t) by finding the fundamental frequency
+
+ω0 and its Fourier Series coefficients ak.
+
+Hint: cos(A)sin(B) = 1/2 [sin(A+B)− sin(A−B)]
+
+ii. (2 pts) Using the result of the previous part, find the power of x(t) using Parseval’s Theorem.
+
+(b) Consider a signal x(t) = sin(3πt) + cos(2πt). Answer the following questions about x(t).
+
+i. (1 pt) What the fundamental frequency ω0 of this signal?
+
+ii. (1 pt)Express x(t) as a sum of complex exponentials using Euler’s formula.
+
+iii. (2 pts) What are the coefficients ak in the Fourier Series representation of x(t)?
+
+iv. (1 pt) The DC component of a signal is defined as its mean value. What is the DC component
+
+of this signal?
+
+(c) Consider the periodic signal described by x(t) = ∞∑ k=−∞ δ(t− 2k)− 14 ∞∑ k=−∞ δ(t+ 2k − 1). 
+
+Answer the following questions about this signal.
+
+i. (1 pt) Find the fundamental frequency, ω0.
+
+ii. (4 pts) Find the DC value c0, and the Fourier series coefficients ck for k 6= 0. Specify the
+
+value of ck for even k and odd k.
+
+(d) (4 pts) Consider a periodic signal of the form 
+
+x(t) = { 1 if 0 ≤ t < 4
+
+−1 4 ≤ t < 8 , with period T = 8.
+
+Compute the Fourier series coefficients of this signal using analysis formulas.
+
+
+
+
+
+
+3. Fourier Transform: LTI Systems Described by LCCDE. (32 pts)
+
+(a) Consider the causal LTI system represented by its input-output relationship:
+
+d^2y(t)/dt2 + 4 dy(t)/dt + 3y(t) = −x(t).
+
+i. (4 pts) Find the frequency response H(jw).
+
+ii. (4 pts) Find the impulse response h(t).
+
+iii. (4 pts) Find the output y(t) when x(t) = e−2tu(t).
+
+(b) A causal LTI system is described by the following differential equation:
+
+dy(t)/dt+ 4y(t) = 9x(t).
+
+i. (4 pts) Find the frequency response H(jω) of this system.
+
+ii. (4 pts) Find the magnitude of the frequency response, |H(jω)|.
+
+iii. (4 pts) Sketch the magnitude of the frequency response (for both positive and negative ω).
+
+iv. (4 pts) Classify this system as low-pass/high-pass/band-pass/band-stop.
+
+v. (4 pts) Find the impulse response h(t) of this system.
+
+
+
+
+
+
+\end{verbatim}
+
+\end{document}

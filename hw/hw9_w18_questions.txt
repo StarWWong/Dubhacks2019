@@ -1,0 +1,147 @@
+1. Review. (20 pts)
+(a) System Properties. To get you ready for Ch.9 in which we will introduce another way to test
+system properties, let us review
+i. (4 pts) Suppose a system is described by the following I/O relationship:
+y(t) = ∞∫t x(τ − 1)dτ
+Without transforming this system into another system description (e.g. h(t) or H(jω)), is
+this system causal? Is this system stable? Justify your answers.
+ii. (4 pts) Suppose an LTI system is described by the following impulse response:
+h(t) = (δ(t) + 2δ(t− 1)) ∗ (δ(t) − δ(t− 2))
+Without transforming this system into another system description (e.g. I/O or H(jω)), is
+this system causal? Is this system stable? Justify your answers.
+(b) LTI System Output. To get you ready for Ch.9, in which we will introduce another way to find the
+output of an LTI system, let us review the three different ways we have learned so far to evaluate
+the output.
+i. (4 pts) x(t) = e−tu(t) and h(t) = u(t) − 2u(t− 1) + u(t− 3). Using convolution in the time
+domain, find y(t). Show that y(t) = 
+0, t < 0
+1 − e−t, 0 < t < 1
+2e−(t−1) − e−t − 1, 1 < t < 3
+2e−(t−1) − e−t − e−(t−3), t > 3
+ii. (4 pts) x(t) = ∞∑ k=−∞
+δ(t− k π/2) and h(t) = 4sinc(8t)e^j(6t). Using Fourier Series, find y(t).
+Hint: You will need to find H(jω) to solve this problem.
+Show that y(t) = 1 + ej4t + ej8t + ej12t.
+iii. (4 pts) x(t) = e−3tu(t)−2te−3tu(t) and h(t) = 4e−tu(t)−2e−2tu(t). Using Fourier Transforms,
+find y(t).
+
+
+
+2. Modulation. (16 pts) The purpose of these problems is to get you comfortable walking through a block
+diagram consisting of modulation (by cosine) systems.
+(a) (4 pts) Consider a signal x(t) with Fourier Transform X(jω) that is input to a system consisting
+of LTI and modulation systems as shown below:
+Sketch the output Fourier Transform Y (jω).
+Hint: The output will consist of two pieces with an amplitude of 14 .
+(b) (4 pts) Consider a signal x(t) with Fourier Transform X(jω) that is input to a system consisting
+of LTI and modulation systems as shown below:
+Sketch the output Fourier Transform Y (jω).
+(c) Let us now tackle the problem of deducing an unknown system:
+Using only LTI systems and/or modulation systems, draw the full system diagram that produces
+the output Fourier Transform Y (jω) given a known input Fourier Transform X(jω) below. If you
+use LTI systems, please make sure to sketch the corresponding frequency response H(jω) that is
+required.
+i. (4 pts) Unknown System #1:
+ii. (4 pts) Unknown System #2:
+
+
+
+3. Demodulation. (26 pts) The purpose of this problem is to apply what you have learned about mod-
+ulation by cosine to design a demodulation system to recover an input or obtain some other desired
+result.
+(a) Consider the following block diagram:
+i. (4 pts) Sketch the output spectrum Y (jω). Precisely label all points and axes.
+ii. X(jω) can be recovered from Y (jω) using a single modulator followed by an ideal LPF with
+frequency response Hr(jω). Answer the following questions:
+A. (4 pts) Draw the block diagram for this system. Clearly specify the modulation signal,
+as well as the filter gain A and cutoff frequency wc for the ideal LPF.
+B. (2 pts) Note that several cutoff frequencies wc are valid for (A). What range of cutoff
+frequencies wc can be used to fully recover x(t) from y(t)?
+(b) (4 pts) Suppose the output of a modulation system is given by Y (jω) below. Draw the demodu-
+lation system that will recover the desired input again, shown below as Xr(jω):
+(c) We briefly learned in class that modulation is useful for different radio stations to send radio
+signals out simultaneously. This is a process called frequency division multiplexing, which we will
+practice with below.
+i. (4 pts) Consider the following frequency division multiplexing system that can be used to
+transmit multiple signals at the same time:
+Draw the overall output Fourier Transform Y (jω) produced by this system.
+ii. (4 pts) Suppose a receiver picks up a signal r(t) whose Fourier Transform is given below:
+We can get back the received triangle signal x1(t) using the system below. The idea is to first
+filter out the desired signal and then shift it back to the center around frequency ω = 0:
+Sketch the output Fourier Transform Xr1(jω) of this system.
+iii. (4 pts) You will notice the system has an error in the output amplitude. What change can
+be made to the receiver system to get the desired amplitude back up to 1? Note: there are
+several answers to this question.
+
+
+
+4. Impulse Train Sampling System. (34 pts) The purpose of this problem is to get you comfortable walk-
+ing through a block diagram consisting of an impulse train sampling system and to visually understand
+the concept of aliasing.
+(a) x(t) undergoes impulse train sampling through the following system below:
+Answer the following questions:
+i. (2 pts) What is the sampling frequency ωs used by this system? What is the equation for the
+output Fourier Transform Xs(jω) in terms of X(jω)?
+Show that ωs = 10 and Xs(jω) = 5π ∞ ∑ k=−∞ X(j(ω − 10k))
+ii. (4 pts) Using your equation from (i), sketch the output spectrum Xs(jω) vs. ω. Make sure
+to label all critical points.
+iii. (2 pts) Using your sketch from (ii) and your understanding of the concept of aliasing, explain
+why this is an example of sampling with no aliasing.
+(b) Now consider the following system diagram with a different impulse train and input x(t):
+Answer the following questions:
+i. (4 pts) What is the sampling frequency fs (not ωs!) used by this system? What is the
+equation for the output Fourier Transform Xs(jω) in terms of X(jω)?
+ii. (4 pts) Using your equation from (i), sketch the output spectrum Xs(jω) vs. ω. Make sure
+to label all critical points.
+Note: you need to first find and sketch X(jω).
+iii. (2 pts) Using your sketch from (ii), does aliasing of x(t) occur? Justify your answer.
+(c) Now consider the following system consisting of both modulation and impulse train sampling
+systems:
+i. (4 pts) What is the sampling period Ts used by the impulse train sampling system? What
+is the equation for X1(jω) in terms of X(jω)? What is the equation for Y (jω) in terms of
+X1(jω)?
+ii. (4 pts) Sketch the final output spectrum Y (jω) vs. ω. Make sure to label all critical points.
+iii. (4 pts) Using your sketch, is it possible to recover the original input x(t) from y(t)? If so,
+draw or describe a system diagram that will do this. Make sure to clearly specify all system
+blocks being used either in words or with a graph.
+(d) (4 pts) Using your knowledge of the behavior of impulse train sampling systems, draw the ap-
+propriate system diagram that will produce the following input-output pair. Justify your design
+choices.
+Make sure to clearly specify your systems with an equation, description, or graph.
+
+
+
+5. Sampling Theorem and Aliasing. (28 pts) The purpose of this problem is to apply the sampling theorem
+to determine how much to sample a continuous-time signal by to avoid aliasing.
+(a) Every signal x(t) has a so-called Nyquist rate ωN used to determine the sampling rate ωs needed
+to avoid aliasing. What is the Nyquist rate ωN for each of the following signals below?
+i. (2 pts) x(t) = sinc(5000t) ∗ cos(5πt)
+Show that ωN = 10π
+ii. (4 pts) x(t) = sin(10πt) cos(10πt)10πt
+iii. (2 pts) x(t) = sinc(5000t) + cos(5πt)
+(b) Signal x(t) undergoes impulse train sampling. Using the sampling theorem, what should the
+sampling period Ts be for each sampling system below to avoid aliasing? Justify your answer.
+i. (2 pts) System #1: Show that we need Ts < π/10
+ii. (2 pts) System #2:
+iii. (2 pts) System #3:
+(c) Consider an impulse train sampling with a fixed sampling period as shown below:
+For each input signal x(t) below, what range of values should the unknown parameter ωx satisfy
+so that x(t) can be recovered uniquely from its samples in xs(t)? Justify your answer.
+i. (2 pts) x(t) = sinc(ωxt)
+Show that we need ωx < 100.
+ii. (2 pts) x(t) = sinc2(ωxt)
+iii. (2 pts) x(t) is generated from the system below:
+(d) In the real-world, signals are not bandlimited in frequency ω and hence must undergo pre-filtering
+before sampling for perfect reconstruction. Answer the following questions for each ideal pre-filter
+and impulse train sampling system below:
+i. (4 pts) System #1: Consider an ideal pre-filter with unknown cutoff frequency ωc and an
+impulse train sampling system with a fixed sampling period Ts:
+What range of cutoff frequencies ωc in the pre-filter are allowed that will prevent aliasing?
+Justify your answer.
+ii. (4 pts) System #2: Consider an idea pre-filter with known cutoff frequency ωc and an impulse
+train sampling system with unknown paramters:
+What should the sampling period Ts of the impulse train sampling system be to avoid aliasing?
+Justify your answer.
+
+
+

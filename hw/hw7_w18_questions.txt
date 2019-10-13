@@ -1,0 +1,99 @@
+1. Review (20 pts)
+(a) Partial Fraction Expansion. (4 pts)
+Let H(s) = s+2(s+3)(s^2+2s+1) . Write H(s) as a sum of partial fractions.
+(b) Unit Impulse. (4 pts)
+Suppose we have an impulse train signal h(t) = ∞∑ k=−∞ δ(t− kT).
+Given an arbitrary signal x(t), find x(t)h(t) and x(t) ∗ h(t) in terms of x(t).
+(c) System Properties. (3 pts)
+i. (1 pt) In general, if an LTI system has a causal impulse response, does it mean the system is
+also stable? Justify your response (with a proof if “true”, or a counter-example if “false”).
+ii. (1 pt) What about the reverse of the previous question: if an LTI system has a stable impulse
+response, does it mean the system is causal? Justify your response (with a proof if “true”, or
+a counter-example if “false”).
+iii. (1 pt) In general, if an LTI system has a periodic impulse response, what can you say about
+its stability?
+(d) Fourier Series. (9 pts)
+Consider an LTI system with frequency response
+H(jw) ={−2, −2 ≤ w ≤ 3
+0, otherwise
+i. (3 pts) Suppose the input is a periodic signal x(t) with the Fourier Series representation
+wo =
+12 , a0 = 1, a2 = a∗−2 = e
+−j π2 , a4 = 2, a−4 = −1, a7 = 5, and ak = 0 for k otherwise.
+Find the output Fourier coefficients bk, and specify your answer for all k. Show that b0 = −2,
+b2 = −2e^−j π/2 , b−2 = −2e^π/2 , b4 = −4, b−4 = 2, b7 = 0, and bk = 0 otherwise.
+ii. (3 pts) Using your results from (A), find the output y(t). Simplify y(t) as much as possible.
+Show that y(t) = −2 − 4cos(t− π/2) − 4jsin(2t) − 2e^a(j2t).
+iii. (3 pts) If x(t) is delayed by 2, then what are the output coefficients bk now? Show that
+b0 = −2, b2 = −2e^−j(π/2 +2), b−2 = −2e^j(π/2 +2), b4 = −4e^−j4, b−4 = 2e^j4, bk = 0 otherwise.
+
+
+
+2. Fourier Transform: Analysis (27 pts)
+(a) (3 pts) x(t) = 2 + e^−|t|.
+Show that X(jω) = 4πδ(ω) + 2/ 1 + ω2
+(b) (5 pts) x(t) = rect(2(t+ 3/4 )) − rect(2(t+1/4 )).
+Show that X(jω) = j^e^jω 2 sin(ω/4)sinc(ω/4).
+(c) (3 pts) x(t) = 1/2e^−j π/4 δ(t− 3) + 1/2e^j π/4 δ(t+ 3).
+Show that X(jω) = cos(π/4 + 3ω).
+(d) (3 pts) x(t) = jπ sin t+1/π cos(3t).
+Show that X(jω) = δ(ω − 1) − δ(ω + 1) + δ(ω − 3) + δ(ω + 3).
+(e) (3 pts) x(t) is given as x(t) = (e^−t − e^−2t)u(t).
+Find X(jω). Show that X(jω) = 1(1+jω)(2+jω).
+(f) (5 pts) x(t) is given as x(t) = e^−3|t| sin t.
+Find X(jω). Show that X(jω) = − 3j9+(ω−1)2 + 3j9+(ω+1)2.
+Hint: X(jω) = 12π (X1(jω) ∗X2(jω))
+(g) (5 pts) x(t) is given as
+x(t) = 4πsinc(4πt) cos(4πt).
+Find X(jω).
+
+
+
+3. Fourier Transform: Synthesize (Inverse Transform). (25 pts)
+Using common Fourier Transform pairs and properties, find the signal x(t) given:
+(a) (2 pts) X(jw) = 3[δ(w − 1) + δ(w + 1)] + 2[δ(w − 2π) + δ(w + 2π)].
+Show that 3π cos(t) + 2π cos(2πt).
+(b) (2 pts) X(jw) = δ(w) + 2δ(w + 3) + 2δ(w − 3).
+Show that x(t) = 12π + 2π cos(3t).
+(c) (2 pts) X(jw) = cos(w + π6 ).
+Hint: Write X(jw) as a sum of complex exponentials first. 
+Show that x(t) = 12ej π6 δ(t + 1) + 1/2e^−j π/6 δ(t− 1).
+(d) (2 pts) X(jw) = 12ej2w + 13.
+Show that x(t) = 12δ(t+ 2) +1/3δ(t).
+(e) (5 pts) X(jw) = 2sin(3(w−2π))w−2π .
+Show that x(t) = rect( t6 )e^j2πt.
+Hint: represent X(jw) using a sinc function.
+(f) (5 pts) X(jw) = 2−jw12−7jw−w2 .
+Hint: Use partial fractions. Show that x(t) = 2e4tu(−t) − e3tu(−t).
+(g) (5 pts) X(jw) = 
+1, −2 < w < 0
+−1, 0 6 w < 2
+0, otherwise.
+Hint: Write this as a sum of two shifted rect functions. Show that x(t) = − 2jπ sinc(t)sin(t).
+(h) (2 pts) X(jw) = e−j3w[u(w + π) − u(w − π)].
+Show that x(t) = sinc(π(t− 3)).
+
+
+
+4. Fourier Transform: Periodic Signals (8 pts)
+(a) (4 pts) Find the Fourier Transform of x(t) = e^jπt + sin(2πt) without using the table of pairs
+(applying the formula of Fourier Transform in Continuous Time).
+(b) (4 pts) Find the Fourier Transform of x(t) = ∞∑ k=−∞ δ(t− 2k).
+Hint: Find the Fourier series coefficients ak of the signal first, and then apply the formula
+X(jw) = ∞∑ k=−∞ 2πakδ(w − kwo).
+
+
+
+5. Fourier Transforms: Other Properties (16 pts)
+(a) (4 pts) Suppose x(t) has the Fourier series representation wo = π/8 and nonzero coefficients a1 = 2j,a−1 = −2j, a3 = 3ej π/4 , a−3 = 3e^−j π/4 . Without synthesizing and calculating x(t), what is P∞?
+(b) (4 pts) Given X(jw) below, what is E∞ of x(t)?
+(c) Let X(jω) denote the Fourier transform of the signal x(t) shown in the figure. Note: The top
+part in the figure is a triangle.
+Using the properties of the Fourier transform (and without explicitly evaluating X(jω)),
+i. (4 pts) Find X(0).
+Hint: Apply the definition of the Fourier transform formula.
+ii. (4 pts) Find ∫∞ −∞X(jω)dω.
+Hint: Apply the definition of the inverse Fourier transform formula.
+
+
+
