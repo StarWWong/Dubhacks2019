@@ -1,64 +1,21 @@
 # Read in PDF as raw text, parse for individual questions
-import re
-
-import textract
-import PyPDF2
-
-from nltk.tokenize import word_tokenize
-from nltk.corpus import stopwords
-
-
-def read(filename):
-
-    pdfFileObj = open(filename, "rb")
-    pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
-
-    num_pages = pdfReader.numPages
-    count = 0
-    text = ""
-    # The while loop will read each page
-    while count < num_pages:
-        pageObj = pdfReader.getPage(count)
-        count += 1
-        text += pageObj.extractText()
-    # This if statement exists to check if the above library returned #words. It's done because PyPDF2 cannot read scanned files.
-    if text != "":
-        text = text
-    # If the above returns as False, we run the OCR library textract to #convert scanned/image based PDF files into text
-    else:
-        text = textract.process(fileurl, method='tesseract', language='eng')
-    # Now we have a text variable which contains all the text derived from our PDF file.
-    # Type print(text) to see what it contains. It #likely contains a lot of spaces, possibly junk such as '\n' etc.
-    # Now, we will clean our text variable, and return it as a list of keywords.
-    # The word_tokenize() function will break our text phrases into #individual words
-    tokens = word_tokenize(text)
-    # we'll create a new list which contains punctuation we wish to clean
-    punctuations = ['(', ')', ';', ':', '[', ']', ',']
-    # We initialize the stopwords variable which is a list of words like #"The", "I", "and", etc. that don't hold much value as keywords
-    stop_words = stopwords.words('english')
-    # We create a list comprehension which only returns a list of words #that are NOT IN stop_words and NOT IN punctuations.
-    keywords = [word for word in tokens if not word in stop_words and not word in punctuations]
-
-    print(text)
+import re, os, random
+from pdflatex import PDFLaTeX
+from tika import parser
 
 
 def readTika(filename):
-
-    from tika import parser
-
     rawText = parser.from_file(filename)
-
     return rawText['content']
 
-document = readTika("/Users/adkn/Sync/Projects/Build/Dubhacks2019/hw test/hw1_w18.pdf")
 
-def extractQuestions(doc_text):
+def extractQuestionsFromSingleDoc(doc_text):
     # so given a list of each "line" in the PDF document, pull out the ones that are questions
     # and/or parts of questions
     # print(doc_text)
     encounteredQuestion = False
     questions = []
-    questionToAdd = ""
+    questionToAdd = []
     for line in doc_text.splitlines():
         # need to mark beginning of questions and end of questions
         if re.match(r"[0-9]+. ", line):
@@ -66,24 +23,72 @@ def extractQuestions(doc_text):
             if encounteredQuestion:
                 encounteredQuestion = False
                 questions.append(questionToAdd)
-                questionToAdd = ""
+                questionToAdd = []
 
             if not encounteredQuestion:
                 encounteredQuestion = True
-            questionToAdd += line + "\n"
+            questionToAdd.append(line)
 
         elif encounteredQuestion:
-            questionToAdd += line + "\n"
-
-
+            if line.strip() != "":
+                questionToAdd.append(line)
 
     return questions
 
-q = extractQuestions(document)
-print(q[0]) # question1, with parts a, i, ii, b, iii, etc...
-print("=====================")
-print(q[1]) # same for question2, so on.
-# todo clean up whitespace in output. Capture of exponents is still broken but we'll run with it.
+
+def extractAllQuestions():
+    allQuestions = []
+
+    for doc in documents:
+        allQuestions.append(extractQuestionsFromSingleDoc(doc))
+
+    return allQuestions
+
+
+def latexToPDF(list_of_questions):
+    # 1) needs to select 10 randomly selected questions from list
+    # 2) write those questions on a specific line of our base_test.tex template line 37, index 36
+    # 3) generate a new PDF from that .tex file
+    # 4) ???
+    # 5) profit?
+
+    # 1) select 10 random questions
+    test_questions = ""
+    for i in range(10):
+        assignment = random.choice(list_of_questions)
+        selectedQ = random.choice(assignment)[0]
+        test_questions += selectedQ + "\n"
+        # remove randomly chosen problem from the pool
+        # assignment.remove([selectedQ])
+
+    # 2) write questions to line 37, index 36
+    base_tex = [line for line in open("base_test.tex", "r")]
+    base_tex[36] = test_questions
+
+    generated = open("generated.tex", "w")
+    generated.writelines(base_tex)
+
+    pdfl = PDFLaTeX.from_texfile("generated.tex")
+    pdf, log, completed_process = pdfl.create_pdf(keep_pdf_file=True, keep_log_file=True)
+
+
+# not really a function, directory will change based on the frontend and backend connections
+basedir = os.getcwd()
+directories = [f for f in os.listdir("hw test") if not f.__contains__("soln")
+               and not f.__contains__("solutions")]
+documents = []
+for d in directories:
+    documents.append(readTika(basedir + "/hw test/" + d))
+
+
+# testQ = extractAllQuestions()[8]
+# for q in testQ:
+#     for k in q: print(k + "\n")
+
+latexToPDF(extractAllQuestions())
+# for l in testQ: print(l)
+
+
 
 
 
