@@ -7,3 +7,10 @@ Homework PDFs are placed in the "hw pdfs" file.
 
 ---
 To run, cd to the directory and run ```python3 ReadPDF.py```
+---
+Requirements:
+You will need an installation of LaTeX and the tika package for python3.
+Install tika: ```pip3 install tika```
+Install LaTeX: ```https://www.latex-project.org/get/```
+
+(note – we used the MacTeX package for Mac)
